@@ -1,0 +1,62 @@
+{
+  "name": "@emberfeather/snowballer",
+  "version": "0.0.0",
+  "license": "MIT",
+  "homepage": "https://emberfeather.github.com/snowballer",
+  "description": "Debt snowball calculation utility for calculating debt repayment with snowballing.",
+  "keywords": [
+    "calculator",
+    "debt"
+  ],
+  "bugs": {
+    "url": "https://github.com/emberfeather/snowballer/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emberfeather/snowballer.git"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "npx tsc",
+    "coverage": "codecov",
+    "dev": "concurrently \"npx mocha -r ts-node/register --watch src/**/*.test.ts\" \"tsc --watch\"",
+    "docs": "typedoc",
+    "fix": "npx eslint --fix src/ts/**/*.ts",
+    "lint": "npx eslint src/ts/**/*.ts",
+    "prepare": "yarn run compile",
+    "prepublish": "yarn run compile",
+    "test": "npx nyc mocha -r ts-node/register src/**/*.test.ts",
+    "test-ci": "npx nyc --reporter=lcov mocha -r ts-node/register src/**/*.test.ts && codecov"
+  },
+  "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@types/node": "^16.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "codecov": "^3.8.3",
+    "concurrently": "^6.2.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-sort-class-members": "^1.11.0",
+    "gts": "^3.1.0",
+    "nyc": "^15.1.0",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.0",
+    "typedoc": "^0.21.5",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3"
+  }
+}
