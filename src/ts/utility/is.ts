@@ -2,7 +2,7 @@
  * Utility for determining the type of a data value.
  */
 export class Is {
-  static isArray(value: any): boolean {
+  static array(value: any): boolean {
     if (Array.isArray) {
       return Array.isArray(value);
     }
@@ -11,27 +11,27 @@ export class Is {
     );
   }
 
-  static isBoolean(value: any): boolean {
+  static boolean(value: any): boolean {
     return typeof value === 'boolean';
   }
 
-  static isDate(value: any): boolean {
+  static date(value: any): boolean {
     return value instanceof Date;
   }
 
-  static isFunction(value: any): boolean {
+  static function(value: any): boolean {
     return typeof value === 'function';
   }
 
-  static isNumber(value: any): boolean {
+  static number(value: any): boolean {
     return typeof value === 'number' && isFinite(value);
   }
 
-  static isNull(value: any): boolean {
+  static null(value: any): boolean {
     return value === null;
   }
 
-  static isObject(value: any): boolean {
+  static object(value: any): boolean {
     return (
       Boolean(value) &&
       typeof value === 'object' &&
@@ -39,7 +39,7 @@ export class Is {
     );
   }
 
-  static isRegExp(value: any): boolean {
+  static regExp(value: any): boolean {
     return (
       Boolean(value) &&
       typeof value === 'object' &&
@@ -47,15 +47,15 @@ export class Is {
     );
   }
 
-  static isString(value: any): boolean {
+  static string(value: any): boolean {
     return typeof value === 'string' || value instanceof String;
   }
 
-  static isSymbol(value: any): boolean {
+  static symbol(value: any): boolean {
     return typeof value === 'symbol';
   }
 
-  static isUndefined(value: any): boolean {
+  static undefined(value: any): boolean {
     return typeof value === 'undefined';
   }
 }
